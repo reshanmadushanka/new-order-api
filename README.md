@@ -5,10 +5,8 @@ This project is a Laravel 11-based Order Management System.
 ## Features
 
 - Create new orders via a REST API.
-- API authentication using Laravel Passport.
 - Queue system to handle high API request load.
 - Client-side storage using IndexedDB.
-- Web form to submit orders and view stored data.
 
 ## Requirements
 
