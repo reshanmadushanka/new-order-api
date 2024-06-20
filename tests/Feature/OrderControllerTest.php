@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Order;
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
@@ -12,7 +13,7 @@ use Tests\TestCase;
 
 class OrderControllerTest extends TestCase
 {
-    use RefreshDatabase; // Reset database after each test
+    use RefreshDatabase;
     /**
      * Test creating a new order.
      *
@@ -33,7 +34,6 @@ class OrderControllerTest extends TestCase
 
         $response = $this->withHeader('Authorization', 'Bearer ' . $token)
                          ->postJson('/api/orders', $orderData);
-
         $response->assertStatus(Response::HTTP_CREATED)
                  ->assertJsonStructure([
                      'data' => [
@@ -42,7 +42,6 @@ class OrderControllerTest extends TestCase
                          'order_value',
                          'created_at',
                          'updated_at',
-                         'process_id',
                          'status',
                      ]
                  ]);

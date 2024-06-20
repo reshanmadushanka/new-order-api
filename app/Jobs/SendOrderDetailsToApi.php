@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Log;
 
 class SendOrderDetailsToApi implements ShouldQueue
 {
-     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $orderDetails;
+    public $orderDetails;
     /**
      * __construct
      *

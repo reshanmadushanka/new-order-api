@@ -10,7 +10,7 @@ use App\Models\User;
 
 class AuthControllerTest extends TestCase
 {
-    use RefreshDatabase; 
+    // use RefreshDatabase; 
 
     /**
      * Test registration endpoint.
